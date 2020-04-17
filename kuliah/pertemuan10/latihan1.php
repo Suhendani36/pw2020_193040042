@@ -37,7 +37,7 @@ $mahasiswa = $rows;
       <th>Gambar</th>
       <th>NRP</th>
       <th>Nama</th>
-      <th>Emial</th>
+      <th>Email</th>
       <th>Jurusan </th>
       <th>Aksi</th>
     </tr>

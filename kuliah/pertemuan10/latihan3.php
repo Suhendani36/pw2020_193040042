@@ -13,6 +13,11 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 </head>
 
 <body>
+
+  <h2>Daftar Mahasiswa</h2>
+
+  <a href="tambah.php">Tambah data mahasiswa</a>
+  <br><br>
   <table border="1" cellpadding="10" cellspacing="0">
     <tr>
       <th>#</th>
