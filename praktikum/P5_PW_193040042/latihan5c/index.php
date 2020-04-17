@@ -44,6 +44,6 @@ $makanan = query("SELECT * FROM makanan");
 </html>
 
 
->
+
 
 
