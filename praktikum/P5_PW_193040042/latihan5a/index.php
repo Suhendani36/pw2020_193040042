@@ -15,7 +15,7 @@ $result = mysqli_query($conn, "SELECT * FROM makanan");
     <title>Document</title>
 
     <style>
-        table{
+        table {
             width: 550px;
             margin: auto;
             background-color: #ffffe0;
