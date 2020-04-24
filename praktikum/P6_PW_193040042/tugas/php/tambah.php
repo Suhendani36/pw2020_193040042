@@ -1,19 +1,14 @@
 <?php
 require 'function.php';
-
-$id = $_GET['id'];
-$mkn = query("SELECT * FROM makanan WHERE id = $id")[0];
-
-
-if (isset($_POST['ubah'])) {
-  if (ubah($_POST) > 0) {
+if (isset($_POST['tambah'])) {
+  if (tambah($_POST) > 0) {
     echo "<script>
-                alert('Data Berhasil diubah!');
+                alert('Data Berhasil ditambahkan!');
                 document.location.href = 'admin.php';
             </script>";
   } else {
     echo "<script>
-              alert('Data gagal diubah!');
+              alert('Data gagal ditambahkan!');
               document.location.href = 'admin.php';
              </script>";
   }
@@ -36,16 +31,15 @@ if (isset($_POST['ubah'])) {
 </head>
 
 <body>
-  <h2>Form Ubah Data Makanan</h2>
+  <h2>Form Tambah Data Makanan</h2>
   <form action="" method="POST">
-    <input type="hidden" name="id" value="<?= $mkn['id']; ?>">
     <table>
       <tr>
         <td>
           <label for="gambar">Gambar</label>
         </td>
         <td>
-          <input type="text" name="gambar" required value="<?= $mkn['gambar']; ?>">
+          <input type="text" name="gambar" required>
         </td>
       </tr>
       <tr>
@@ -53,7 +47,7 @@ if (isset($_POST['ubah'])) {
           <label for="nama">Nama</label>
         </td>
         <td>
-          <input type="text" name="nama" required value="<?= $mkn['nama']; ?>">
+          <input type="text" name="nama" required>
         </td>
       </tr>
       <tr>
@@ -61,15 +55,15 @@ if (isset($_POST['ubah'])) {
           <label for="bahan">Bahan</label>
         </td>
         <td>
-          <input id="id" rows="4" cols="50" name="bahan" required value="<?= $mkn['bahan']; ?>">
+          <input id="bahan" rows="4" cols="50" name="bahan" required>
         </td>
       </tr>
       <tr>
         <td>
           <label for="daerah_asal">Daerah Asal</label>
-        </td>0
+        </td>
         <td>
-          <input type="text" name="daerah_asal" required value="<?= $mkn['daerah_asal']; ?>">
+          <input type="text" name="daerah_asal" required>
         </td>
       </tr>
       <tr>
@@ -77,11 +71,11 @@ if (isset($_POST['ubah'])) {
           <label for="manfaat">Manfaat</label>
         </td>
         <td>
-          <input id="id" rows="4" cols="50" name="manfaat" required value="<?= $mkn['manfaat']; ?> ">
+          <input id="manfaat" rows="4" cols="50" name="manfaat" required>
         </td>
       </tr>
     </table>
-    <button type="submit" name="ubah">Ubah Data</button>
+    <button type="submit" name="tambah">Tambah Data</button>
   </form>
 </body>
 

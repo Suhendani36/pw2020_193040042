@@ -67,7 +67,7 @@ if (isset($_POST['ubah'])) {
       <tr>
         <td>
           <label for="daerah_asal">Daerah Asal</label>
-        </td>0
+        </td>
         <td>
           <input type="text" name="daerah_asal" required value="<?= $mkn['daerah_asal']; ?>">
         </td>

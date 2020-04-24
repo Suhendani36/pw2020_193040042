@@ -1,19 +1,9 @@
 <?php
 require 'function.php';
 
-if (isset($_GET['cari'])) {
-  $keyword = $_GET['keyword'];
-  $makanan = query("SELECT * FROM makanan WHERE
-             gambar LIKE '%$keyword%' OR 
-             nama LIKE '%$keyword%' OR 
-             bahan LIKE '%$keyword%' OR 
-             daerah_asal LIKE '%$keyword%' OR 
-             manfaat LIKE '%$keyword%' ");
-} else {
-  $makanan = query("SELECT * FROM makanan");
-}
 
 
+$makanan = query("SELECT * FROM makanan");
 ?>
 
 
@@ -33,7 +23,6 @@ if (isset($_GET['cari'])) {
       background-color: #ffffe0;
       color: black;
       text-align: center;
-
     }
 
     .b3 {
@@ -50,12 +39,12 @@ if (isset($_GET['cari'])) {
     <a href="tambah.php" class="a3">
       <button class="b3">Tambah Data</button>
     </a>
+    <br>
+    <a href="../index.php">
+      <button class="b3">Back</button>
+    </a>
   </div>
-  <form action="" method="GET">
-    <input type="text" name="keyword" autofocus>
-    <button type="submit" name="cari">Search!</button>
-  </form>
-  <br>
+
   <table border="1" cellpadding="13" cellspacing="0">
 
     <tr>

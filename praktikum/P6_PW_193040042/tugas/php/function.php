@@ -67,8 +67,7 @@ function ubah($data)
                   bahan = '$bahan',
                   daerah_asal = '$daerah_asal',
                   manfaat = '$manfaat'
-                WHERE id = '$id' 
-                ";
+                WHERE id = '$id' ";
     mysqli_query($conn, $queryubah);
 
     return mysqli_affected_rows($conn);
