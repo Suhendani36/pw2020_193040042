@@ -68,34 +68,45 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .container {
+      width: 300px;
+      border: 1px dashed gray;
+      float: left;
+    }
+
+    body {
+      margin: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <form action="" method="POST">
-    <?php if (isset($error)) : ?>
-      <p>Username atau Password Salah</p>
-    <?php endif; ?>
-    <table>
-      <tr>
-        <td><label for="username">Username</label></td>
-        <td>:</td>
-        <td><input type="text" name="username"></td>
-      </tr>
-      <tr>
-        <td><label for="password">Password</label></td>
-        <td>:</td>
-        <td><input type="password" name="password"></td>
-      </tr>
-    </table>
-    <div class="remember">
-      <input type="checkbox" name="remember">
-      <label for="remember">Remember Me</label>
-    </div>
-    <button type="submit" name="submit">Login</button>
-    <div class="registrasi">
-      <p>Belum punya ? Registrasi <a href="registrasi.php">Disini</a></p>
-    </div>
-  </form>
+  <div class="container">
+    <form action="" method="POST">
+      <?php if (isset($error)) : ?>
+        <p>Username atau Password Salah</p>
+      <?php endif; ?>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" name="username">
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="remember">
+        <label class="form-check-label" for="remember">Remember Me</label>
+      </div>
+      <button type="submit" class="btn btn-primary" name="submit">Login</button>
+      <div class="registrasi">
+        <p>Belum punya ? Registrasi <a href="registrasi.php">Disini</a></p>
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>
