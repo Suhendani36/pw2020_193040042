@@ -26,24 +26,36 @@ if (isset($_POST['register'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>registrasi</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    .container {
+      width: 300px;
+      border: 1px dashed gray;
+      float: left;
+    }
+
+    body {
+      margin: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <form action="" method="post">
-    <table>
-      <tr>
-        <td><label for="username">Username</label></td>
-        <td>:</td>
-        <td><input type="text" name="username"></td>
-      </tr>
-      <tr>
-        <td><label for="password">Password</label></td>
-        <td>:</td>
-        <td><input type="password" name="password"></td>
-      </tr>
-    </table>
-    <button type="submit" name="register">Register</button>
-  </form>
+
+  <div class="container">
+    <form action="" method="POST">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" name="username">
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+      </div>
+      <button type="submit" class="btn btn-primary" name="register">Register</button>
+    </form>
+  </div>
 </body>
 
 </html>
