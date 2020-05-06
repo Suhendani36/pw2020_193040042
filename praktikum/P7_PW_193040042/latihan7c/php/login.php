@@ -2,31 +2,13 @@
 session_start();
 require 'function.php';
 
-// Cek cookie
-if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
-  $username = $_COOKIE['username'];
-  $hash = $_COOKIE['hash'];
-
-  // Ambil username berdasarkan id
-  $result = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
-  $row = mysqli_fetch_assoc($result);
-
-  // Cek cookie dan username
-  if ($hash === hash('sha256', $row['id'], false)) {
-    $_SESSION['username'] = $row['username'];
-    header("Location: admin.php");
-    exit;
-  }
-}
-
-
-// cek user login 
+// Melakukan pengecekan apakah user sudah melakukan Login, jika sudah redirect ke halaman admin
 if (isset($_SESSION['username'])) {
   header("Location: admin.php");
   exit;
 }
 
-// login
+// Login
 if (isset($_POST['submit'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
@@ -55,6 +37,24 @@ if (isset($_POST['submit'])) {
     }
   }
   $error = true;
+}
+
+
+// Cek cookie
+if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
+  $username = $_COOKIE['username'];
+  $hash = $_COOKIE['hash'];
+
+  // Ambil username berdasarkan id
+  $result = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
+  $row = mysqli_fetch_assoc($result);
+
+  // Cek cookie dan username
+  if ($hash === hash('sha256', $row['id'], false)) {
+    $_SESSION['username'] = $row['username'];
+    header("Location: admin.php");
+    exit;
+  }
 }
 ?>
 
@@ -89,7 +89,7 @@ if (isset($_POST['submit'])) {
     </table>
     <div class="remember">
       <input type="checkbox" name="remember">
-      <label for="remmeber">Remember Me</label>
+      <label for="remember">Remember Me</label>
     </div>
     <button type="submit" name="submit">Login</button>
     <div class="registrasi">
