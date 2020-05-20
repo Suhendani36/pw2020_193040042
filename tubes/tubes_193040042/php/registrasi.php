@@ -10,12 +10,12 @@ if (isset($_POST['register'])) {
   if (registrasi($_POST) > 0) {
     echo "<script>
       alert('Registrasi Berhasil');
-      document.location.href ='login.php';
+      document.location.href ='login2.php';
     </script>";
   } else {
     echo "<script>
       alert('Registrasi Gagal');
-      document.location.href ='login.php';
+      document.location.href ='login2.php';
     </script>";
   }
 }
