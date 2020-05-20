@@ -47,59 +47,60 @@ if (isset($_POST['ubah'])) {
 </head>
 
 <body>
-  <h2>Form Ubah Data Makanan</h2>
-  <a href="admin.php"><button type="submit" name="tambah" class="btn btn-warning tombol" style="margin-left: 736px;">Back</button></a>
-  <form action="" method="POST" enctype="multipart/form-data">
-    <div class="container" style="text-align: center; margin-top: 20px;">
-      <div class="row">
-        <div class="col">
-          <button type="submit" name="ubah" class="btn btn-info tombol">Ubah Data</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <input type="hidden" name="id" value="<?= $mkn['id']; ?>">
-      <div class="row add">
-        <div class="col-sm coll">
-          <input type="hidden" name="gambar_lama" value="<?= $mkn['gambar']; ?>">
-          <div class="img">
-            <label class="ml-4 mt-2">
-              <b>Gambar</b>
-              <img src="../assets/img/<?= $mkn['gambar']; ?>" width="120" style="display: block;" class="img-preview">
-              <input type="file" name="gambar" class="gambar " onchange="previewImage()">
-            </label>
-
-          </div>
-        </div>
-        <div class="col-lg">
-          <div class="form-group row">
-            <label for="nama" class="col-sm-2 col-form-label "><b>Nama</b></label>
-            <div class="col-lg-9">
-              <input type="text" name="nama" class="form-control" id="nama" required value="<?= $mkn['nama']; ?>">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="bahan" class="col-sm-2 col-form-label"><b>Bahan Makanan</b></label>
-            <div class="col-sm-9">
-              <textarea class="form-control" id="bahan" rows="4" name="bahan"><?= $mkn['bahan']; ?></textarea>
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="daerah_asal" class="col-sm-2 col-form-label "><b>Daerah Asal</b></label>
-            <div class="col-sm-9">
-              <input type="text" name="daerah_asal" class="form-control" id="daerah_asal" required value="<?= $mkn['daerah_asal']; ?>">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="manfaat" class="col-sm-2 col-form-label "><b>Manfaat Makanan</b></label>
-            <div class="col-sm-9">
-              <textarea class="form-control" id="manfaat" rows="4" name="manfaat"><?= $mkn['manfaat']; ?></textarea>
-            </div>
+  <div class="container float-md-left">
+    <h2>Form Ubah Data Makanan</h2>
+    <a href="admin.php"><button type="submit" name="tambah" class="btn btn-warning tombol" style="margin-left: 736px;">Back</button></a>
+    <form action="" method="POST" enctype="multipart/form-data">
+      <div class="container float-md-left" style="text-align: center; margin-top: 20px;">
+        <div class="row">
+          <div class="col">
+            <button type="submit" name="ubah" class="btn btn-info tombol">Ubah Data</button>
           </div>
         </div>
       </div>
-  </form>
+
+      <div class="container">
+        <input type="hidden" name="id" value="<?= $mkn['id']; ?>">
+        <div class="row add">
+          <div class="col-sm coll">
+            <input type="hidden" name="gambar_lama" value="<?= $mkn['gambar']; ?>">
+            <div class="img">
+              <label class="ml-4 mt-2">
+                <b>Gambar</b>
+                <img src="../assets/img/<?= $mkn['gambar']; ?>" width="120" style="display: block;" class="img-preview">
+                <input type="file" name="gambar" class="gambar " onchange="previewImage()">
+              </label>
+
+            </div>
+          </div>
+          <div class="col-lg">
+            <div class="form-group row">
+              <label for="nama" class="col-sm-2 col-form-label "><b>Nama</b></label>
+              <div class="col-lg-9">
+                <input type="text" name="nama" class="form-control" id="nama" required value="<?= $mkn['nama']; ?>">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="bahan" class="col-sm-2 col-form-label"><b>Bahan Makanan</b></label>
+              <div class="col-sm-9">
+                <textarea class="form-control" id="bahan" rows="4" name="bahan"><?= $mkn['bahan']; ?></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="daerah_asal" class="col-sm-2 col-form-label "><b>Daerah Asal</b></label>
+              <div class="col-sm-9">
+                <input type="text" name="daerah_asal" class="form-control" id="daerah_asal" required value="<?= $mkn['daerah_asal']; ?>">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="manfaat" class="col-sm-2 col-form-label "><b>Manfaat Makanan</b></label>
+              <div class="col-sm-9">
+                <textarea class="form-control" id="manfaat" rows="4" name="manfaat"><?= $mkn['manfaat']; ?></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+    </form>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
