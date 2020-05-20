@@ -102,3 +102,27 @@ if (isset($_POST['ubah'])) {
 </body>
 
 </html>
+
+
+
+
+
+
+<form>
+  <div class="form-group">
+    <label for="nama">Nama</label>
+    <input type="text" name="nama" class="form-control" id="nama" required value="<?= $mkn['nama']; ?>">
+  </div>
+  <div class="form-group">
+    <label for="bahan">Bahan Makanan</label>
+    <textarea class="form-control" id="bahan" rows="4"><?= $mkn['bahan']; ?></textarea>
+  </div>
+  <div class="form-group">
+    <label for="daerah_asal">Daerah Asal</label>
+    <input type="text" name="daerah_asal" class="form-control" id="daerah_asal" required value="<?= $mkn['daerah_asal']; ?>">
+  </div>
+  <div class="form-group">
+    <label for="manfaat">Manfaat Makanan</label>
+    <textarea class="form-control" id="manfaat" rows="4"><?= $mkn['manfaat']; ?></textarea>
+  </div>
+</form>
